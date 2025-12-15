@@ -1,5 +1,60 @@
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: rgb(107, 244, 126);
+  max-width: 800px;               
+  font-family: "Courier New", monospace;
+  background-color: rgb(194, 194, 149);
+  padding: 15px;
+  border: 2px solid black;
+  margin: 20px;
+  font-size: 20px;
+  text-align: left;
+  color: black;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.parent {
+  display: flex;
+  background-color: rgb(194, 194, 149); 
+  padding: 20px;
+  border: 2px dashed #333;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap; 
+  }
+
+  .box {
+    width: calc(50% - 1rem);
+  }
+}
+
+
+@media (min-width: 1025px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .box {
+    width: calc(33.333% - 1rem);
+  }
+}
+
+.child {
+  background-color: rgb(194, 194, 149);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #888;
+}
+.link{
+  display: flex;
+ align-items: flex-end;
+ gap: 10px;
 }
