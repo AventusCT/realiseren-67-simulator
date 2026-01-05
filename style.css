@@ -3,7 +3,11 @@
   --secondary-color: #000000;
   --font-family: "Courier New", monospace;
   --bg: var(--primary-color);
-  --accent: rgb(154,154,28);
+  --bg-1: #FFD700; /* warm yellow */
+  --bg-2: #ffffff; /* light neutral */
+  --bg-3: #ffffff; /* white */
+  --bg-accent: rgb(154,154,28);
+  --accent: var(--bg-accent);
   --muted: #888888;
 }
 
@@ -66,3 +70,17 @@ body {
  align-items: flex-end;
  gap: 10px;
 }
+
+
+.bg-primary { background: var(--bg-1); }
+.bg-light { background: var(--bg-2); }
+.bg-white { background: var(--bg-3); }
+.bg-gradient { background: linear-gradient(135deg, var(--bg-1), var(--bg-2)); }
+
+
+.site-header { background: linear-gradient(90deg, rgba(255,215,0,0.95), rgba(240,244,248,0.95)); padding: 1rem; }
+.site-hero { background: linear-gradient(180deg, rgba(255,215,0,0.9), rgba(255,255,255,0.6)); padding: 2rem; }
+.site-footer { background: #222; color: #fff; padding: 1rem; }
+
+
+body { background: var(--bg); }
