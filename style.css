@@ -1,14 +1,22 @@
+:root {
+  --primary-color: #FFD700;
+  --secondary-color: #000000;
+  --font-family: "Courier New", monospace;
+  --bg: var(--primary-color);
+  --accent: rgb(154,154,28);
+  --muted: #888888;
+}
 
 body {
   max-width: 800px;               
-  font-family: "Courier New", monospace;
-  background-color: gold;
+  font-family: var(--font-family);
+  background: var(--bg);
   padding: 15px;
   border: 2px solid black;
   margin: 20px;
   font-size: 20px;
   text-align: left;
-  color: black;
+  color: var(--secondary-color);
 }
 .header-container {
   display: flex;
@@ -18,7 +26,7 @@ body {
 }
 .parent {
   display: flex;
-  background-color: rgb(154, 154, 28); 
+  background-color: var(--accent);
   padding: 20px;
   border: 2px dashed #333;
   margin-bottom: 20px;
@@ -51,7 +59,7 @@ body {
   background-color: rgb(255, 255, 255);
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid #888;
+  border: 1px solid var(--muted);
 }
 .link{
   display: flex;
