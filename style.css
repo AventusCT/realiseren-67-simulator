@@ -3,9 +3,9 @@
   --secondary-color: #000000;
   --font-family: "Courier New", monospace;
   --bg: var(--primary-color);
-  --bg-1: #FFD700; /* warm yellow */
-  --bg-2: #ffffff; /* light neutral */
-  --bg-3: #ffffff; /* white */
+  --bg-1: #FFD700; 
+  --bg-2: #000000; 
+  --bg-3: #ffffff; 
   --bg-accent: rgb(154,154,28);
   --accent: var(--bg-accent);
   --muted: #888888;
