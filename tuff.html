@@ -2,29 +2,36 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>2de pagina</title>
+    <title>Solicitatie</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<ul>
- <li><a href="../realiseren-67-simulator/index.html"></a></li>
-
-
+<!-- Navigation -->
+<ul class="navbar">
+    <li><a href="../realiseren-67-simulator/index.html">Home</a></li>
 </ul>
 
-  <h1>Solicitatie</h1>
- <form>
-  <label for="fname">Voornaam:</label><br>
-  <input type="text" id="fname" name="fname"><br>
-  <label for="lname">Achternaam:</label><br>
-  <input type="text" id="lname" name="lname">
-</form> 
-<h1>Cv</h1>
-<form">
-  <input type="file" id="myFile" name="filename">
-  <input type="submit">
-</form>
+<div class="container">
+
+    <h1>Sollicitatie</h1>
+    <form class="form-box">
+        <label for="fname">Voornaam</label>
+        <input type="text" id="fname" name="fname" placeholder="Voornaam">
+
+        <label for="lname">Achternaam</label>
+        <input type="text" id="lname" name="lname" placeholder="Achternaam">
+
+        <button type="submit">Versturen</button>
+    </form>
+
+    <h1>CV Upload</h1>
+    <form class="form-box">
+        <input type="file" id="myFile" name="filename">
+        <button type="submit">Upload</button>
+    </form>
+
+</div>
 
 </body>
 </html>
