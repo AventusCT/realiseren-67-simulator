@@ -1,37 +1,62 @@
-/* ========== RESET & BASIS ========== */
+/* ========== RESET ========== */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
+/* ========== BASIS ========== */
+html,
 body {
-    margin: 0;
-    background-color: #0d0d0d;
-    color: #f1f1f1;
+    min-height: 100%;
+    background-color: #0b0b0b; /* deep black */
+    color: #f5f5f5;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
 }
 
 /* ========== NAVBAR ========== */
+header {
+    background-color: #111111;
+    border-bottom: 1px solid #2a2208; /* subtle gold tint */
+}
+
 .navbar {
     list-style: none;
     display: flex;
-    gap: 10px;
-    background-color: #1a1a1a;
-    padding: 0 20px;
-    margin: 0;
+    align-items: center;
+    gap: 6px;
+
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 20px;
 }
 
 .navbar li a {
     display: block;
-    color: white;
-    padding: 15px 18px;
+    padding: 10px 16px;
+
+    color: #d4af37; /* gold */
     text-decoration: none;
-    border-radius: 6px;
-    transition: background-color 0.25s ease;
+    font-size: 14px;
+    font-weight: 600;
+
+    border-radius: 8px;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .navbar li a:hover {
-    background-color: #333;
+    background-color: #1c1c1c;
+    color: #ffd966;
+    box-shadow: 0 0 0 1px #3a2f0c inset;
+}
+
+.navbar li a.active {
+    background-color: #d4af37;
+    color: #0b0b0b;
 }
 
 /* ========== LAYOUT ========== */
@@ -41,10 +66,11 @@ body {
     padding: 20px;
 }
 
-/* ========== TITELS & TEKST ========== */
+/* ========== TEKST ========== */
 h1 {
-    margin-bottom: 10px;
     font-size: 32px;
+    margin-bottom: 10px;
+    color: #ffd966;
 }
 
 p {
@@ -52,69 +78,78 @@ p {
     margin-bottom: 25px;
 }
 
-/* ========== FORMULIEREN ========== */
-.form-box,
-form {
-    background-color: #1a1a1a;
+/* ========== FORM ========== */
+.form-box {
+    background-color: #111111;
     padding: 25px;
-    border-radius: 10px;
-    margin-bottom: 30px;
+    border-radius: 12px;
+    border: 1px solid #2a2208;
 }
 
 label {
     display: block;
     margin-top: 15px;
     font-size: 14px;
-    color: #dddddd;
+    color: #d4af37;
 }
 
 input,
 textarea {
     width: 100%;
-    padding: 12px;
     margin-top: 6px;
-    background-color: #262626;
-    border: 1px solid #333;
+    padding: 12px;
+
+    background-color: #0f0f0f;
+    border: 1px solid #2a2208;
     border-radius: 6px;
-    color: white;
+
+    color: #ffffff;
     font-size: 14px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #888;
 }
 
 input:focus,
 textarea:focus {
     outline: none;
-    border-color: #666;
-    background-color: #2e2e2e;
+    border-color: #d4af37;
+    box-shadow: 0 0 0 1px #d4af37;
 }
 
-textarea {
-    resize: none;
-    min-height: 120px;
-}
-
-/* ========== BUTTONS ========== */
+/* ========== BUTTON ========== */
 button {
     margin-top: 20px;
     width: 100%;
     padding: 12px;
-    background-color: #444;
-    color: white;
-    font-size: 15px;
+
+    background: linear-gradient(135deg, #d4af37, #ffd966);
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
+
+    color: #0b0b0b;
+    font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.25s ease, transform 0.1s ease;
+
+    transition:
+        transform 0.1s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
 }
 
 button:hover {
-    background-color: #666;
+    filter: brightness(1.1);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.25);
 }
 
 button:active {
-    transform: scale(0.98);
+    transform: scale(0.97);
 }
 
-/* ========== MOBIEL ========== */
+/* ========== MOBILE ========== */
 @media (max-width: 600px) {
     .container {
         margin: 20px;
@@ -124,4 +159,53 @@ button:active {
     h1 {
         font-size: 26px;
     }
+
+    .navbar {
+        overflow-x: auto;
+    }
+
+    .navbar li a {
+        white-space: nowrap;
+    }
 }
+
+/* ========== FORM ROW WITH SIDE IMAGES ========== */
+.form-row {
+    display: flex;              /* make the container flex */
+    justify-content: center;    /* center horizontally */
+    align-items: flex-start;    /* top-align the images and form */
+    gap: 20px;                  /* space between images and form */
+    flex-wrap: wrap;            /* allows stacking on small screens */
+}
+
+.form-row .side-image {
+    width: 150px;      
+    height: 300px;     
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #2a2208;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.form-row .form-box {
+    flex: 1 1 400px;   /* flexible form, min 400px, grows */
+    max-width: 600px;
+}
+
+/* MOBILE: stack images above/below form */
+@media (max-width: 800px) {
+    .form-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-row .side-image {
+        width: 80%;
+        height: 200px;
+    }
+
+    .form-row .form-box {
+        width: 100%;
+    }
+}
+
