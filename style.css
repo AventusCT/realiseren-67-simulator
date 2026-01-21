@@ -2,7 +2,7 @@
   --primary-color: #FFD700;
   --secondary-color: #000000;
   --font-family: "Courier New", monospace;
-  --bg: var(--primary-color);
+  --bg: linear-gradient(135deg, var(--bg-1), var(--bg-2));
   --bg-1: #FFD700; 
   --bg-2: #000000; 
   --bg-3: #ffffff; 
@@ -11,10 +11,15 @@
   --muted: #888888;
 }
 
+html {
+  height: 100%;
+  background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+}
+
 body {
   max-width: 800px;               
   font-family: var(--font-family);
-  background: var(--bg);
+  background: none;
   padding: 15px;
   border: 2px solid black;
   margin: 20px;
@@ -81,6 +86,3 @@ body {
 .site-header { background: linear-gradient(90deg, rgba(255,215,0,0.95), rgba(240,244,248,0.95)); padding: 1rem; }
 .site-hero { background: linear-gradient(180deg, rgba(255,215,0,0.9), rgba(255,255,255,0.6)); padding: 2rem; }
 .site-footer { background: #222; color: #fff; padding: 1rem; }
-
-
-body { background: var(--bg); }
